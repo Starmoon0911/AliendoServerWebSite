@@ -5,6 +5,7 @@ import supportInfo from '@/lib/supportInfo';
 import { Button } from '@/components/ui/button';
 import { ExternalLinkIcon } from 'lucide-react';
 import Link from 'next/link';
+
 const SponsorshipPage = () => {
     const OpenDC = () => {
         window.open('https://discord.com/users/576666559439699981', '_blank');
@@ -19,7 +20,6 @@ const SponsorshipPage = () => {
                     我們非常感謝您考慮贊助我們🛐，您的支持將幫助我們達成更多的目標，並使我們更加成功！
                 </p>
 
-                {/* 贊助方案 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {Object.entries(supportInfo).map(([key, plan]) => (
                         <div key={key} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
@@ -32,14 +32,18 @@ const SponsorshipPage = () => {
                                 {plan.canUseBack && <li>可使用後台功能</li>}
                                 {plan.useEC && <li>可使用遠端終界箱</li>}
                                 {plan.nick && <li>可設定昵稱</li>}
-                                {plan.more && <li className='text-gray-400'><Link target='_blank' href='https://cdn.discordapp.com/attachments/1296348513134706739/1301156994379419690/image.png?ex=67261761&is=6724c5e1&hm=4fe46d8347b255566a9230168d1a0bfd98014e0d264da9ba8ecea81e37124eb8&'>還有更多...</Link></li>}
+                                {plan.more && (
+                                    <li className='text-gray-400'>
+                                        <Link target='_blank' href='https://cdn.discordapp.com/attachments/1296348513134706739/1301156994379419690/image.png?ex=67261761&is=6724c5e1&hm=4fe46d8347b255566a9230168d1a0bfd98014e0d264da9ba8ecea81e37124eb8&'>
+                                            還有更多...
+                                        </Link>
+                                    </li>
+                                )}
                             </ul>
                         </div>
                     ))}
 
-
                     <div className="container mx-auto px-4">
-
                         <Button
                             variant="default"
                             onClick={OpenDC}
@@ -50,9 +54,7 @@ const SponsorshipPage = () => {
                         </Button>
                     </div>
                 </div>
-
             </div>
-
         </div>
     );
 };
