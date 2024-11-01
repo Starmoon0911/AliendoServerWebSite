@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-
+import Image from 'next/image';
 interface AboutUsProps {
   avatarURL: string;
   name: string;
@@ -39,7 +39,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ avatarURL, name, desc, right }) => {
       <div className="container mx-auto px-4">
         {/* 使用 flex 來控制排列方式 */}
         <div className={`max-w-4xl mx-auto flex items-center ${right ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col`}>
-          <img
+          <Image
             ref={avatarRef}
             className="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-6 md:ml-6"
             src={avatarURL}

@@ -2,13 +2,9 @@
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Lenis from "lenis"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Button } from "@/components/ui/button"
 import { ArrowDown, ClipboardIcon, CheckIcon } from "lucide-react"
 import AboutUsProfile from "@/components/AbuoutUsProfile"
-gsap.registerPlugin(ScrollTrigger)
-
 export default function Home() {
     const heroSectionRef = useRef<HTMLDivElement>(null)
     const aboutUsRef = useRef<HTMLDivElement>(null)
@@ -35,60 +31,6 @@ export default function Home() {
 
         return () => lenis.destroy()
     }, [])
-
-    // gsap 動畫效果
-    useEffect(() => {
-        // Hero Section 標題動畫
-        gsap.fromTo(
-            [titleRef.current,verstionRef.current],
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1.3,
-                delay:0.3,
-                scrollTrigger: {
-                    trigger: heroSectionRef.current,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                },
-            }
-        )
-
-        // 按鈕動畫（逐個顯示）
-        gsap.fromTo(
-            infoButtonRef.current,
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: 0.5,
-                scrollTrigger: {
-                    trigger: heroSectionRef.current,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse",
-                },
-            }
-        )
-
-        gsap.fromTo(
-            copyRef.current,
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: 0.7,
-                scrollTrigger: {
-                    trigger: heroSectionRef.current,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse",
-                },
-            }
-        )
-    }, [])
-
     // 複製文字功能
     const copyText = () => {
         navigator.clipboard.writeText(ServerIP)
