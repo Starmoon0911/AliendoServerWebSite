@@ -86,7 +86,7 @@ export default function Home() {
                     onClick={() => aboutUsRef.current?.scrollIntoView({ behavior: 'smooth' })}
                     className="mt-8 text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition relative z-10"
                 >
-                    <ArrowDown className="w-10 h-10 animate-bounce" />
+                    <ArrowDown className="w-10 h-10 animate-bounce text-white" />
                 </button>
             </section>
 

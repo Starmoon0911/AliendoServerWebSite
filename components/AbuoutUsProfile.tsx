@@ -21,7 +21,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ avatarURL, name, desc, right }) => {
     gsap.to([avatarRef.current, nameRef.current], {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 2,
       stagger: 0.2,  // 讓名字和 avatar 有間隔出現
     });
 
@@ -29,7 +29,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ avatarURL, name, desc, right }) => {
     gsap.to(descRef.current, {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 2,
       delay: 1,  // 延遲 1 秒後出現
     });
   }, []);
@@ -43,6 +43,8 @@ const AboutUs: React.FC<AboutUsProps> = ({ avatarURL, name, desc, right }) => {
             ref={avatarRef}
             className="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-6 md:ml-6"
             src={avatarURL}
+            width={300}
+            height={300}
             alt={`${name}'s Avatar`}
           />
           <div className={`text-center md:text-left ${right ? 'md:text-right' : ''}`}>

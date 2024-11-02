@@ -24,12 +24,12 @@ const SponsorshipPage = () => {
                     {Object.entries(supportInfo).map(([key, plan]) => (
                         <div key={key} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{plan.displayName}</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">每月贊助 ${plan.price}</p>
+                            <p className="text-gray-600 dark:text-gray-300 mb-4">單次贊助${plan.price}</p>
                             <p className="mb-4">包括：</p>
                             <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 mb-4">
                                 <li>最大家點數量: {plan.maxHomePoint}</li>
                                 <li>最大保區數量: {plan.maxResCount}</li>
-                                {plan.canUseBack && <li>可使用後台功能</li>}
+                                {plan.canUseBack && <li>可使用Back指令</li>}
                                 {plan.useEC && <li>可使用遠端終界箱</li>}
                                 {plan.nick && <li>可設定昵稱</li>}
                                 {plan.more && (

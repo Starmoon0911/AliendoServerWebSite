@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel } from "@/components/ui/alert-dialog"; // 根據你的 Shadcn 專案路徑來引入
-
+import { Button } from '@/components/ui/button'
 const SponsorshipNotice = () => {
     const [open, setOpen] = useState(false);
 
@@ -55,9 +55,9 @@ const SponsorshipNotice = () => {
                             </button>
                         </AlertDialogCancel>
                         <AlertDialogAction asChild>
-                            <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
-                                同意
-                            </button>
+                            <Button variant="default" className=''>
+                                我同意!
+                            </Button>
                         </AlertDialogAction>
                     </div>
                 </AlertDialogContent>

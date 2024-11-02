@@ -23,10 +23,15 @@ export function NavMenu() {
                     <DropdownMenuLabel>Links</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
+
                         <DropdownMenuItem>
-                            <Link href="/">Home</Link>
+                            <Link href="/support">贊助資訊</Link>
                         </DropdownMenuItem>
-                    </DropdownMenuGroup>    
+
+                        <DropdownMenuItem>
+                            <Link href="/rule">遊玩規章</Link>
+                        </DropdownMenuItem>
+                    </DropdownMenuGroup>
                 </DropdownMenuContent>
             </DropdownMenu>
         </div >
