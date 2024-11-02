@@ -9,13 +9,9 @@ interface BottomBarProps {
         title: string;
         items: { label: string; url: string }[];
     }[];
-    support: {
-        title: string;
-        items: { label: string; url: string }[];
-    };
 }
 
-const BottomBar: React.FC<BottomBarProps> = ({ contactInfo, links, support }) => {
+const BottomBar: React.FC<BottomBarProps> = ({ contactInfo, links }) => {
     return (
         <footer className="dark:bg-gray-800 text-white py-6">
             <div className="container mx-auto px-4">
